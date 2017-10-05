@@ -1,0 +1,36 @@
+<ion-header >
+  <ion-navbar color="dark">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title><font  size="4" face="font-stretch">Show URL</font></ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="page-url">
+  <ion-list>
+    <ion-item-group *ngFor="let crons of (crons | async)?.status">
+      <ion-item-divider class="page-url3"> <font color="#000000" size="4.5" face="verdana">Label:  {{ crons.url }}</font></ion-item-divider>
+      <ion-item class="page-url1">
+        <ion-label  item-start > <font color="000000"  size="3" face="font_family">Description </font></ion-label>
+        <ion-label  item-end > <font color="00B2EE"  size="3" face="font_family">{{ crons.url }} </font></ion-label>
+      </ion-item>
+      <ion-item class="page-url1">
+        <ion-label  item-start> <font color="000000"  size="2" face="font_family">URL_DEV </font></ion-label>
+        <ion-label  item-end></ion-label>
+      </ion-item>
+      <ion-item class="page-url1">
+        <ion-label  item-start ><font color="000000"  size="2" face="font_family">URL_TEST :</font></ion-label>
+        <ion-label  item-end></ion-label>
+      </ion-item >
+      <ion-item class="page-url2">
+        <ion-label  item-start ><font color="000000"  size="2" face="font_family">URL_PROD :</font></ion-label>
+        <ion-label  item-end></ion-label>
+      </ion-item><hr>
+    </ion-item-group>
+  </ion-list>
+</ion-content>
+<ion-footer >
+  <ion-toolbar >
+    <p Align=center><font color="#FF3300" > </font></p>
+  </ion-toolbar>
+</ion-footer>

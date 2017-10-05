@@ -1,35 +1,52 @@
-import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { MyApp } from './app.component';
-
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
-import { TabsPage } from '../pages/tabs/tabs';
-
+import { ErrorHandler, NgModule } from '@angular/core';
+import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { HealthCheck } from './app.component';
+import { UrlPage } from '../pages/url/url';
+import { CommandPage } from '../pages/command/command';
+import { HomeModule } from '../pages/home/home.module';
+import { CronsModule } from '../pages/crons/crons.module';
+import { CronPage } from '../pages/cron/cron';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { HttpModule } from '@angular/http';
+import { MonitorPage } from '../pages/monitor/monitor';
+import { DetailmonitorPage } from '../pages/detailmonitor/detailmonitor';
+import { DiskmemoryPageModule } from '../pages/diskmemory/diskmemory.module';
+import {ShowmemoryPageModule} from '../pages/showmemory/showmemory.module';
+import {ShowdetailPageModule} from '../pages/showdetail/showdetail.module';
+import {ShowdiskPageModule} from '../pages/showdisk/showdisk.module';
+
 
 @NgModule({
   declarations: [
-    MyApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
-    TabsPage
+    HealthCheck,
+    UrlPage,
+    CommandPage,
+    CronPage,
+    MonitorPage,
+    DetailmonitorPage
   ],
   imports: [
+
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    HttpModule,
+    HomeModule,
+    CronsModule,
+    DiskmemoryPageModule,
+    ShowmemoryPageModule,
+    ShowdetailPageModule,
+    ShowdiskPageModule,
+    IonicModule.forRoot(HealthCheck),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
-    TabsPage
+  HealthCheck,
+  UrlPage,
+  CommandPage,
+  CronPage,
+  MonitorPage,
+  DetailmonitorPage
   ],
   providers: [
     StatusBar,

@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title ><font  size="3" face="font-stretch">Detail</font>  </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="page-detailmonitor">
+<ion-card *ngFor="let cron of (crons | async)?.response_time"  >
+  <ion-item-group  >
+    <ion-item-divider class="page-detailmonitor3" color="light"> <font color="#000000" size="3" face="font_family">URL:  {{ cron.ci_name }}</font> <button text-right (click)="showChart(cron)"><ion-icon  name="ios-podium-outline"></ion-icon> </button></ion-item-divider>
+    <ion-item class="page-detailmonitor2">
+      <ion-label><font color="00B2EE"  size="3" face="font_family"> ExpectResponseTime :</font></ion-label>
+      <h3  item-end > {{ cron.expect_response_time }}</h3>
+    </ion-item>
+    <ion-item class="page-detailmonitor2" >
+      <ion-label><font color="#00B2EE"  size="3" face="font_family">AvgTime :</font></ion-label>
+      <h3 item-end>{{ cron.avg_time }}</h3>
+    </ion-item>
+    <ion-item class="page-detailmonitor2">
+      <ion-label><font color="#00B2EE"  size="3" face="font_family">LowestResponseTime:</font></ion-label>
+      <h3  item-end>{{ cron.lowest_response_time }}</h3>
+    </ion-item>
+    <ion-item class="page-detailmonitor2">
+      <ion-label><font color="#00B2EE"  size="3" face="font_family">HighestResponseTime:</font></ion-label>
+      <h3  item-end>{{ cron.highest_response_time }}</h3>
+    </ion-item>
+    <ion-item class="page-detailmonitor2">
+      <ion-label><font color="#00B2EE"  size="3" face="font_family">PeakTime(Count):</font></ion-label>
+      <h3  item-end>{{ cron.peak_time_count }}</h3>
+    </ion-item>
+    <ion-item class="page-detailmonitor1" class="item-divider positive-bg light">
+      <ion-label  item-start ><font color="#00B2EE"  size="3" face="font_family">PeakTimeResults:</font></ion-label>
+      <h3  item-end>{{ cron.peak_time_results }}</h3>
+    </ion-item>
+
+  </ion-item-group>
+  </ion-card>  <hr>
+</ion-content>
+<ion-footer >
+  <ion-toolbar >
+    <p Align=center><font color="#FF3300" > </font></p>
+  </ion-toolbar>
+</ion-footer>

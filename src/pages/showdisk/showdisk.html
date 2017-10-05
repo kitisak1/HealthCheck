@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>showdisk</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="page-showdisk1" >
+  <ion-card class="page-showdisk" >
+    <ion-card-header>
+      <font color="#FF3300" >disk name :</font> {{ name }}
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #doughnutCanvas></canvas>
+    </ion-card-content>
+    <p Align=center><font color="#FF3300" > {{metric_value }}%</font></p>
+      <p Align=center><font color="#000000" >usage : </font>
+    <font color="#FF3300" > {{metric_value }}</font>
+    <font color="#000000" >available : </font>
+    <font color="#FF3300" > {{available }}</font></p>
+
+  </ion-card>
+</ion-content>
